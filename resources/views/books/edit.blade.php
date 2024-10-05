@@ -19,14 +19,18 @@
             <input type="text" class="form-control" id="title" name="title" placeholder="Kitob nomini kiriting"
                 value="{{$book->title}}" required>
         </div>
-
+        @error('title')
+            <p class="help-blok text-danger">{{'*' . $message}}</p>
+        @enderror
         <div class="mb-3">
             <label for="description" class="form-label">Kitob Tavsifi</label>
             <textarea class="form-control" id="description" name="description" rows="3"
                 placeholder="Kitob tavsifini kiriting"
                 required>{{$book->description}}</textarea>
         </div>
-
+        @error('description')
+            <p class="help-blok text-danger">{{'*' . $message}}</p>
+        @enderror
         <div class="mb-3">
             <label for="authors" class="form-label">Mualliflarni Tanlang</label>
             <select class="form-select" id="authors" name="authors[]" multiple>

@@ -13,19 +13,23 @@
         @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Kitob Nomi</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Kitob nomini kiriting"
+                <input type="text" class="form-control" id="title" value="{{old(key: 'title')}}" name="title" placeholder="Kitob nomini kiriting"
                     required>
             </div>
-
+            @error('title')
+                <p class="help-blok text-danger">{{'*' . $message}}</p>
+            @enderror
             <div class="mb-3">
                 <label for="description" class="form-label">Kitob Tavsifi</label>
                 <textarea class="form-control" id="description" name="description" rows="3"
-                    placeholder="Kitob tavsifini kiriting" required></textarea>
+                    placeholder="Kitob tavsifini kiriting" required>{{old(key: 'description')}}</textarea>
             </div>
-
+            @error('description')
+                <p class="help-blok text-danger">{{'*' . $message}}</p>
+            @enderror
             <div class="mb-3">
                 <label for="authors" class="form-label">Mualliflarni Tanlang</label>
-                <select class="form-select" id="authors" name="authors[]" multiple>
+                <select class="form-select" id="authors" name="authors[]" multiple required>
                     @foreach ($authors as $author)
                         <option value="{{$author->id}}">{{$author->name}}</option>
                     @endforeach

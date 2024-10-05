@@ -14,27 +14,34 @@
             @method('PUT')
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" id="author_id" name="author_id" value="{{$author->id}}"> 
-
+           
             <div class="mb-3">
                 <label for="name" class="form-label">Muallif Ismi</label>
                 <input type="text" class="form-control"  name="name" placeholder="Muallif ismini kiriting"
                     value="{{$author->name}}" required>
             </div>
+            @error('name')
+                <p class="help-blok text-danger">{{'*' . $message}}</p>
+            @enderror
             <div class="mb-3">
                 <label for="email" class="form-label">Muallif Ismi</label>
                 <input type="email" class="form-control"  name="email" placeholder="Muallif emailini kiriting"
                     value="{{$author->email}}" required>
             </div>
-
+            @error('email')
+                <p class="help-blok text-danger">{{'*' . $message}}</p>
+            @enderror
             <div class="mb-3">
                 <label for="bio" class="form-label">Muallif Biografiyasi</label>
                 <textarea class="form-control" name="bio" rows="3"
                     placeholder="Muallif biografiyasini kiriting" required>{{$author->bio}}</textarea>
             </div>
-
+            @error('bio')
+                <p class="help-blok text-danger">{{'*' . $message}}</p>
+            @enderror
             <div class="mb-3">
                 <label for="books" class="form-label">Kitoblarni Tanlang</label>
-                <select class="form-select"  name="books[]" multiple>
+                <select class="form-select"  name="books[]" multiple required>
                     @foreach ($books as $book) 
                         <option value="{{$book->id}}" selected>{{$book->title}}</option>
                     @endforeach
