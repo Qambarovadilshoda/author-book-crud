@@ -21,7 +21,7 @@
                     value="{{$author->name}}" required>
             </div>
             @error('name')
-                <p class="help-blok text-danger">{{'*' . $message}}</p>
+                <p class="help-blok text-danger">{{'* ' . $message}}</p>
             @enderror
             <div class="mb-3">
                 <label for="email" class="form-label">Muallif Ismi</label>
@@ -29,7 +29,7 @@
                     value="{{$author->email}}" required>
             </div>
             @error('email')
-                <p class="help-blok text-danger">{{'*' . $message}}</p>
+                <p class="help-blok text-danger">{{'* ' . $message}}</p>
             @enderror
             <div class="mb-3">
                 <label for="bio" class="form-label">Muallif Biografiyasi</label>
@@ -37,7 +37,7 @@
                     placeholder="Muallif biografiyasini kiriting" required>{{$author->bio}}</textarea>
             </div>
             @error('bio')
-                <p class="help-blok text-danger">{{'*' . $message}}</p>
+                <p class="help-blok text-danger">{{'* ' . $message}}</p>
             @enderror
             <div class="mb-3">
                 <label for="books" class="form-label">Kitoblarni Tanlang</label>

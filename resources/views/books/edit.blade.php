@@ -20,7 +20,7 @@
                 value="{{$book->title}}" required>
         </div>
         @error('title')
-            <p class="help-blok text-danger">{{'*' . $message}}</p>
+            <p class="help-blok text-danger">{{'* ' . $message}}</p>
         @enderror
         <div class="mb-3">
             <label for="description" class="form-label">Kitob Tavsifi</label>
@@ -29,7 +29,7 @@
                 required>{{$book->description}}</textarea>
         </div>
         @error('description')
-            <p class="help-blok text-danger">{{'*' . $message}}</p>
+            <p class="help-blok text-danger">{{'* ' . $message}}</p>
         @enderror
         <div class="mb-3">
             <label for="authors" class="form-label">Mualliflarni Tanlang</label>

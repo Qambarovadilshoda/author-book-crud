@@ -16,14 +16,14 @@
             <input type="text" class="form-control" id="name" value="{{old('name')}}" name="name" placeholder="Muallif ismini kiriting" required>
         </div>
         @error('name')
-        <p class="help-blok text-danger">{{'*' . $message}}</p>
+        <p class="help-blok text-danger">{{'* ' . $message}}</p>
         @enderror
         <div class="mb-3">
             <label for="email" class="form-label">Muallif Email</label>
             <input type="email" class="form-control" id="name" value="{{old('email')}}" name="email" placeholder="Muallif emailini kiriting" required>
         </div>
         @error('email')
-        <p class="help-blok text-danger">{{'*' . $message}}</p>
+        <p class="help-blok text-danger">{{'* ' . $message}}</p>
         @enderror
         <div class="mb-3">
             <label for="bio" class="form-label">Muallif Biografiyasi</label>
@@ -31,7 +31,7 @@
                 placeholder="Muallif biografiyasini kiriting" required>{{old('bio')}}</textarea>
         </div>
         @error('bio')
-        <p class="help-blok text-danger">{{'*' . $message}}</p>
+        <p class="help-blok text-danger">{{'* ' . $message}}</p>
         @enderror
         <button type="submit" class="btn btn-primary">Saqlash</button>
     </form>
